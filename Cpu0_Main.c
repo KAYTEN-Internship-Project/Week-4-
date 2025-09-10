@@ -14,9 +14,9 @@
 #include "Configuration.h"
 #include "ConfigurationIsr.h"
 #include <string.h>
-#include "Bsp.h"           // wait() için
-#include "lwip/etharp.h"   // ARP fonksiyonları için
-#include "lwip/pbuf.h"     // pbuf için
+#include "Bsp.h"           // for wait()
+#include "lwip/etharp.h"   // for ARP functions
+#include "lwip/pbuf.h"     // for pbuf
 #include"lwipopts.h"
 #include "netif/etharp.h"
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
@@ -106,7 +106,7 @@ void core0_main(void)
     udp_bind(g_udp_rx_pcb, IP_ADDR_ANY, BRIDGE_UDP_PORT);
     udp_recv(g_udp_rx_pcb, udp_recv_callback, NULL);
 
-    // ARP table'a Kart A'yı manuel ekle
+    // Manually add Board A to the ARP table
     ip_addr_t karta_ip;
     struct eth_addr karta_mac;
 
