@@ -8,7 +8,7 @@ static struct udp_pcb *g_udp_pcb = NULL;
 static ip_addr_t g_dest_addr;
 static void (*g_rx_callback)(const CanUdpFrame *frame) = NULL;
 
-// udp_bridge.c  (B KARTI)
+// udp_bridge.c  (Board B)
 static void udp_rx_handler(void *arg, struct udp_pcb *pcb, struct pbuf *p,
                            const ip_addr_t *addr, u16_t port)
 {
@@ -17,8 +17,8 @@ static void udp_rx_handler(void *arg, struct udp_pcb *pcb, struct pbuf *p,
 
     if (p->tot_len >= sizeof(CanUdpFrame) && g_rx_callback) {
         CanUdpFrame frame;
-        // ÖNCEKI: if (p->len >= ...) { memcpy(&frame, p->payload, ...); }
-        // YENI:
+        // PREVIOUS: if (p->len >= ...) { memcpy(&frame, p->payload, ...); }
+        // NEW:
         pbuf_copy_partial(p, &frame, sizeof(CanUdpFrame), 0);
         g_rx_callback(&frame);
     }
