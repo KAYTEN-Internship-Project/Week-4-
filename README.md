@@ -3,7 +3,8 @@
 This repository provides firmware and documentation for implementing a **bidirectional CAN ↔ UDP gateway** on the **Infineon AURIX™ TC375 Lite Kit**.  
 The project enables seamless communication between a CAN bus and Ethernet (UDP/IP), bridging automotive communication with IP-based systems.
 
-![WhatsApp Image 2025-09-10 at 17 17 19](https://github.com/user-attachments/assets/61c5fb90-4087-4b35-a11b-c15d6780d80d)
+![zorttt](https://github.com/user-attachments/assets/6bb7d6d8-8a73-4008-a13a-00372167eb81)
+
 
 *Photo: Test setup including TC375 Lite boards, PEAK CAN-USB interface, and wiring connections.*
 
