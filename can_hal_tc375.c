@@ -16,7 +16,7 @@ bool can_hal_init(uint32_t bitrate)
     IfxCan_Can_initModule(&g_can_module, &canConfig);
 
     // TLE9251V transceiver STB pin -> LOW (Normal mode)
-    // SENIN KARTINA GORE DEGISTIR
+    // CHANGE ACCORDING TO YOUR BOARD
     IfxPort_setPinModeOutput(&MODULE_P20, 6, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
     IfxPort_setPinLow(&MODULE_P20, 6);
 
@@ -53,7 +53,7 @@ bool can_hal_init(uint32_t bitrate)
     nodeConfig.filterConfig.standardFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_acceptToRxFifo0;
     nodeConfig.filterConfig.extendedFilterForNonMatchingFrames = IfxCan_NonMatchingFrame_acceptToRxFifo0;
 
-    // CAN pins - SENIN KARTINA GORE DEGISTIR
+    // CAN pins - CHANGE ACCORDING TO YOUR BOARD
     static const IfxCan_Can_Pins pins = {
         .txPin     = &IfxCan_TXD00_P20_8_OUT,
         .txPinMode = IfxPort_OutputMode_pushPull,
@@ -84,21 +84,21 @@ bool can_hal_receive(CanFrame *frame, uint32_t timeout_ms)
         if (IfxCan_Node_getRxFifo0FillLevel(g_can_node.node) > 0) {
             uint32_t rxData[2];
 
-            // DÖNÜŞ DEĞERİNİ ATAMA YAPMADAN ÇAĞIR
+            // CALL WITHOUT ASSIGNING THE RETURN VALUE
             IfxCan_Can_readMessage(&g_can_node, &g_rx_msg, rxData);
 
-            // Mesaj alanlarını doldur
+            // Fill in the message fields
             frame->id  = g_rx_msg.messageId;
-            // IDE/RTR’ı ID’den türetmek yerine mesaj modundan al
+            // Get IDE/RTR from the message mode instead of deriving them from the ID
             frame->ide = (g_rx_msg.messageIdLength == IfxCan_MessageIdLength_extended) ? 1 : 0;
             frame->rtr = g_rx_msg.remoteTransmitRequest ? 1 : 0;
 
 
-            // DLC: klasik CAN ise 0..8; istersen uzunluğa çevir
-            // frame->dlc = IfxCan_Dlc_toLength(g_rx_msg.dataLengthCode);  // fonksiyon varsa
-            frame->dlc = g_rx_msg.dataLengthCode; // çoğu örnekte 8 ile eşleşir
+            // DLC: 0..8 for classic CAN; convert to length if you want
+            // frame->dlc = IfxCan_Dlc_toLength(g_rx_msg.dataLengthCode);  // if the function exists
+            frame->dlc = g_rx_msg.dataLengthCode; // matches 8 in most examples
 
-            // Veri kopyası
+            // Data copy
             frame->data[0] = (rxData[0] >> 0)  & 0xFF;
             frame->data[1] = (rxData[0] >> 8)  & 0xFF;
             frame->data[2] = (rxData[0] >> 16) & 0xFF;
@@ -112,7 +112,7 @@ bool can_hal_receive(CanFrame *frame, uint32_t timeout_ms)
         }
 
         wait(1);      // 1 ms
-        elapsed_ms++; // timeout takibi
+        elapsed_ms++; // timeout tracking
     }
 
     return false; // Timeout
