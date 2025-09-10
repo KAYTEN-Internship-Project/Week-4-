@@ -37,7 +37,7 @@ The project enables seamless communication between a CAN bus and Ethernet (UDP/I
 ## 🖼 Hardware Setup
 
 ### DB9 CAN Pinout
-<img width="600" height="250" alt="Pin_out_gösterilmesi" src="https://github.com/user-attachments/assets/4872af62-2c96-49b5-8ef9-1dd641841882" />
+<img width="200" height="200" alt="Pin_out_gösterilmesi" src="https://github.com/user-attachments/assets/4872af62-2c96-49b5-8ef9-1dd641841882" />
 
 *Standard DB9 pinout used by PEAK CAN adapters. Pin 2 = CAN Low, Pin 3 = CAN Ground, Pin 7 = CAN High.*
 
@@ -58,21 +58,21 @@ The project enables seamless communication between a CAN bus and Ethernet (UDP/I
 ---
 
 ### PEAK CAN USB FD Pro
-<img width="273" height="547" alt="Peak_Can_USB_fd_pro" src="https://github.com/user-attachments/assets/104e6a4a-a057-48b5-bb3c-e77961cc0751" />
+<img width="500" height="547" alt="Peak_Can_USB_fd_pro" src="https://github.com/user-attachments/assets/104e6a4a-a057-48b5-bb3c-e77961cc0751" />
 
 *PEAK PCAN-USB FD Pro adapter used for monitoring and transmitting CAN messages at 500 kbit/s.*
 
 ---
 
 ### Saleae Logic Analyzer Pinout
-<img width="309" height="234" alt="Saleae_Pinout" src="https://github.com/user-attachments/assets/e689af6d-c52f-4074-88a1-f63e8e69cd41" />
+<img width="200" height="200" alt="Saleae_Pinout" src="https://github.com/user-attachments/assets/e689af6d-c52f-4074-88a1-f63e8e69cd41" />
 
 *Saleae logic analyzer pinout for capturing CAN_H and CAN_L signals, verifying bit timing and frame integrity.*
 
 ---
 
 ### TC375 CAN Transceiver
-<img width="207" height="285" alt="Screenshot 2025-09-10 151535" src="https://github.com/user-attachments/assets/3b46231f-6e8e-4450-af17-13077bf2c9be" />
+<img width="200" height="200" alt="Screenshot 2025-09-10 151535" src="https://github.com/user-attachments/assets/3b46231f-6e8e-4450-af17-13077bf2c9be" />
 
 *On-board Infineon TLE9251V CAN transceiver used on the TC375 Lite Kit to interface with the CAN bus.*
 
