@@ -37,7 +37,7 @@ The project enables seamless communication between a CAN bus and Ethernet (UDP/I
 ## 🖼 Hardware Setup
 
 ### DB9 CAN Pinout
-<img width="400" height="400" alt="Pin_out_gösterilmesi" src="https://github.com/user-attachments/assets/4872af62-2c96-49b5-8ef9-1dd641841882" />
+<img width="600" height="250" alt="Pin_out_gösterilmesi" src="https://github.com/user-attachments/assets/4872af62-2c96-49b5-8ef9-1dd641841882" />
 
 *Standard DB9 pinout used by PEAK CAN adapters. Pin 2 = CAN Low, Pin 3 = CAN Ground, Pin 7 = CAN High.*
 
