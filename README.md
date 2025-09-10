@@ -9,7 +9,7 @@ The project enables seamless communication between a CAN bus and Ethernet (UDP/I
 
 ---
 
-## ✨ Features
+##  Features
 
 - Bidirectional conversion: **CAN → UDP** and **UDP → CAN**.  
 - Based on **Infineon AURIX TC375 Lite Kit** with **TLE9251V CAN transceiver**.  
@@ -24,7 +24,7 @@ The project enables seamless communication between a CAN bus and Ethernet (UDP/I
 
 ---
 
-## 📡 System Overview
+##  System Overview
 
 - **Board A (CAN → UDP):** Receives CAN frames and forwards them as UDP packets.  
 - **Board B (UDP → CAN):** Receives UDP packets and retransmits them on the CAN bus.  
@@ -34,7 +34,7 @@ The project enables seamless communication between a CAN bus and Ethernet (UDP/I
 
 ---
 
-## 🖼 Hardware Setup
+##  Hardware Setup
 
 ### DB9 CAN Pinout
 <img width="200" height="200" alt="Pin_out_gösterilmesi" src="https://github.com/user-attachments/assets/4872af62-2c96-49b5-8ef9-1dd641841882" />
@@ -100,14 +100,19 @@ The firmware consists of the following modules:
 
 ---
 
-## 🚀 Results
+##  Results
 
 - **Logic Analyzer:** Confirmed periodic transmission of `0x300h` frames.  
 - **PCAN-View:** Successfully received both `0x300h` (zero data) and `0x123h` (0xAA pattern) frames.  
 - **Cycle Times:** 1 ms for test frame generation, stable reception over extended runtime.  
-
 ---
-
-## 📚 References
-
+<img width="500" height="500" alt="ilk_taraf" src="https://github.com/user-attachments/assets/339c04c9-bd8f-46d9-a70f-625df1e51938" />
+*PCAN view CAN1 output*
+---
+<img width="500" height="500" alt="2 kısım" src="https://github.com/user-attachments/assets/1f0b754e-74c3-4950-8fb7-c659b39bb72d" />
+*PCAN view CAN2 output*
+---
+<img width="717" height="294" alt="0x300logic" src="https://github.com/user-attachments/assets/d16f53f5-1762-435d-864e-5ec091749419" />
+*PSalae Logic Analyzer Output output*
+##  References
 ( Infineon AURIX documentation, PEAK PCAN-USB manuals, lwIP reference)
