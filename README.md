@@ -24,6 +24,22 @@ The project enables seamless communication between a CAN bus and Ethernet (UDP/I
 
 ---
 
+# AURIX TC375 CAN ↔ UDP Gateway — Minimal Build Guide
+
+This project has **two firmware variants** you can flash to the TC375 Lite Kit:
+
+- **Card A (CAN → UDP)**
+- **Card B (UDP → CAN)** **← default**
+
+Your repository will ship with **Card B enabled by default**. You can switch to **Card A** by replacing the main file as "cpu0_Main.c".
+
+---
+##  Disable DHCP (use static IP)
+Edit your **`lwipopts.h`** and make sure DHCP is **disabled**:
+"lwipopts.h" 
+#define LWIP_DHCP *
+
+---
 ##  System Overview
 
 - **Board A (CAN → UDP):** Receives CAN frames and forwards them as UDP packets.  
@@ -32,6 +48,7 @@ The project enables seamless communication between a CAN bus and Ethernet (UDP/I
 - PC with PEAK PCAN-USB FD Pro monitors CAN messages.  
 - Saleae Logic Analyzer validates low-level signals.  
 
+     
 ---
 
 ##  Hardware Setup
