@@ -9,7 +9,7 @@
 #define BRIDGE_NETMASK     "255.255.255.0"
 #define BRIDGE_GATEWAY     "192.168.10.1"
 
-// Tasking compiler için pragma pack syntaxı
+// Pragma pack syntax for the Tasking compiler
 #pragma pack(1)
 typedef struct {
     uint32_t id_be;      // Network byte order (big-endian) CAN ID
